@@ -1,7 +1,7 @@
-# Publaynet
+# Publaynet Largest Dataset Ever for Document Layout Analysis
 
 *****
-## Requirements：
+## Requirements:
 Detectron2 
 * [Github地址](https://github.com/facebookresearch/detectron2)
 * [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
