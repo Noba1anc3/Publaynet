@@ -1,15 +1,11 @@
-# Publaynet项目结构说明
+# Publaynet
 
 *****
-## 安装环境：
-### Detectron2 
-* Linux or macOS with Python ≥ 3.6
-* PyTorch ≥ 1.3
-* pycocotools
-* json
+## Requirements：
+Detectron2 
 * [Github地址](https://github.com/facebookresearch/detectron2)
 * [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
-
+json
 *****
 ## 文件说明：
 * detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
