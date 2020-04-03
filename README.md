@@ -1,12 +1,13 @@
-# Publaynet Largest Dataset Ever for Document Layout Analysis
+# Publaynet: Largest Dataset Ever for Document Layout Analysis
++ [Paper Link](https://arxiv.org/pdf/1908.07836)
 
-*****
 ## Requirements:
 Detectron2 
 * [Github地址](https://github.com/facebookresearch/detectron2)
 * [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
+
 json
-*****
+
 ## 文件说明：
 * detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
