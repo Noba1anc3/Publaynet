@@ -1,12 +1,10 @@
-# Publaynet: Largest Dataset Ever for Document Layout Analysis
-+ [Paper Link](https://arxiv.org/pdf/1908.07836)
+# Publaynet
++ [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
 ## Requirements:
 Detectron2 
 * [Github地址](https://github.com/facebookresearch/detectron2)
 * [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
-
-json
 
 ## 文件说明：
 * detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
