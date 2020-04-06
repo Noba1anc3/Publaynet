@@ -6,8 +6,8 @@ from detectron2.data import DatasetCatalog, MetadataCatalog
 from detectron2.engine import DefaultPredictor
 from detectron2.config import get_cfg
 
-valPath = "./publaynet_data/image/"
-valjsonPath = "./publaynet_data/data.json"
+valPath = "../drive/'My Drive'/image/"
+valjsonPath = "../drive/'My Drive'/data.json"
 
 with open(valjsonPath, 'r') as f:
     print('loading json......')
