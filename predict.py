@@ -35,7 +35,7 @@ cfg = get_cfg()
 cfg.MODEL.DEVICE = 'cpu'
 cfg.OUTPUT_DIR = './output_publaynet'
 
-cfg.merge_from_file("./detectron2_repo/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
+cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.DATASETS.TRAIN = ("trainSet",)
 cfg.DATASETS.TEST = ()
 cfg.DATALOADER.NUM_WORKERS = 6
@@ -46,7 +46,7 @@ cfg.SOLVER.MAX_ITER =180000
 cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 512
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 5
 
-cfg.merge_from_file("./detectron2_repo/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
+cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
 # cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7
