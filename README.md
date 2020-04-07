@@ -2,15 +2,12 @@
 + [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
 ## Requirements:
-- Detectron2
-  - cython
-  - torchvision
-  - opencv-python
-  - 'git+https://github.com/facebookresearch/fvcore'
-  - 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
-  
-  * [Github地址](https://github.com/facebookresearch/detectron2)
-  * [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
+Detectron2  [Github地址](https://github.com/facebookresearch/detectron2)  [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)  
+- cython
+- torchvision
+- opencv-python
+- 'git+https://github.com/facebookresearch/fvcore'
+- 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
 ## DataSet:
 - Images
