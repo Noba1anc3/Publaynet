@@ -2,7 +2,7 @@
 + [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
 ## Requirements:
-[Detectron2](https://github.com/facebookresearch/detectron2)  [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)  
+[Detectron2](https://github.com/facebookresearch/detectron2)
 - cython
 - torchvision
 - opencv-python
