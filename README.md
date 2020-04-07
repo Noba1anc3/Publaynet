@@ -2,7 +2,7 @@
 + [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
 ## Requirements:
-Detectron2  [Github地址](https://github.com/facebookresearch/detectron2)  [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)  
+[Detectron2](https://github.com/facebookresearch/detectron2)  [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)  
 - cython
 - torchvision
 - opencv-python
@@ -22,29 +22,35 @@ Detectron2  [Github地址](https://github.com/facebookresearch/detectron2)  [Col
   * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
 
 ## To Run in Google Colab:
-1. Import Google Drive
+1. Clone publaynet and detectron2
+```
+!git clone https://github.com/noba1anc3/Publaynet.git
+cd Publaynet
+!git clone https://github.com/facebookresearch/detectron2.git
+  
+```
+
+2. Install Requirements and Build Detectron2
+```
+pip install -r requirements.txt
+cd detectron2
+!python setup.py build develop
+cd ..
+```
+
+3. Import Google Drive
 ```
 from google.colab import drive
 drive.mount('/content/drive/')
 ```
 
-2. Clone publaynet and detectron2, then build
+4. Copy data and model to Publaynet's path
 ```
-!git clone https://github.com/noba1anc3/Publaynet.git  
-cd Publaynet  
-!git clone https://github.com/facebookresearch/detectron2.git  
-cd detectron2  
-!python setup.py build develop  
-```
-
-3. Copy data and model to Publaynet's path
-```
-cd ..  
-mkdir publaynet_data  
-mkdir output_publaynet  
-cp -rf ../drive/'My Drive'/image/ ./publaynet_data/  
-cp -rf ../drive/'My Drive'/data.json ./publaynet_data/  
-cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet  
+mkdir publaynet_data
+mkdir output_publaynet
+cp -rf ../drive/'My Drive'/image/ ./publaynet_data/
+cp -rf ../drive/'My Drive'/data.json ./publaynet_data/
+cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet
 ```
 
 ## 文件说明：
