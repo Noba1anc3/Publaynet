@@ -22,18 +22,18 @@ Detectron2  [Github地址](https://github.com/facebookresearch/detectron2)  [Col
   * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
 
 ## To Run:
-!git clone https://github.com/Noba1anc3/Publaynet.git
-cd Publaynet
-!git clone https://github.com/facebookresearch/detectron2.git
-cd detectron2
-!python setup.py build develop
+!git clone https://github.com/Noba1anc3/Publaynet.git  
+cd Publaynet  
+!git clone https://github.com/facebookresearch/detectron2.git  
+cd detectron2  
+!python setup.py build develop  
 
-cd ..
-mkdir publaynet_data
-mkdir output_publaynet
-cp -rf ../drive/'My Drive'/image/ ./publaynet_data/
-cp -rf ../drive/'My Drive'/data.json ./publaynet_data/
-cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet
+cd ..  
+mkdir publaynet_data  
+mkdir output_publaynet  
+cp -rf ../drive/'My Drive'/image/ ./publaynet_data/  
+cp -rf ../drive/'My Drive'/data.json ./publaynet_data/  
+cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet  
 
 ## 文件说明：
 * detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
