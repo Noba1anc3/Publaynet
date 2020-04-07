@@ -7,9 +7,6 @@ from detectron2.config import get_cfg
 from detectron2.utils.logger import setup_logger
 setup_logger()
 
-from google.colab import drive
-drive.mount('/content/drive/')
-
 trainPath = "./publaynet_data/image/"
 trainjsonPath = "./publaynet_data/data.json"
 
