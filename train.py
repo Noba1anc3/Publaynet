@@ -7,6 +7,9 @@ from detectron2.config import get_cfg
 from detectron2.utils.logger import setup_logger
 setup_logger()
 
+from google.colab import drive
+drive.mount('/content/drive/')
+
 trainPath = "./publaynet_data/image/"
 trainjsonPath = "./publaynet_data/data.json"
 
@@ -35,7 +38,7 @@ cfg = get_cfg()
 cfg.MODEL.DEVICE = 'cpu'
 cfg.OUTPUT_DIR = './output_publaynet'
 
-cfg.merge_from_file("./detectron2_repo/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
+cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.DATASETS.TRAIN = ("trainSet",)
 cfg.DATASETS.TEST = ()
 cfg.DATALOADER.NUM_WORKERS = 6
