@@ -2,7 +2,13 @@
 + [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
 ## Requirements:
-- Detectron2 
+- Detectron2
+  - cython
+  - torchvision
+  - opencv-python
+  - 'git+https://github.com/facebookresearch/fvcore'
+  - 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+  
   * [Github地址](https://github.com/facebookresearch/detectron2)
   * [Colab教程](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
 
@@ -17,7 +23,21 @@
 - Annotation
   * [Txt](https://bhpan.buaa.edu.cn:443/link/0E4FDB66D538F60A891E51CBB94F09A7)
   * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
- 
+
+## To Run:
+!git clone https://github.com/Noba1anc3/Publaynet.git
+cd Publaynet
+!git clone https://github.com/facebookresearch/detectron2.git
+cd detectron2
+!python setup.py build develop
+
+cd ..
+mkdir publaynet_data
+mkdir output_publaynet
+cp -rf ../drive/'My Drive'/image/ ./publaynet_data/
+cp -rf ../drive/'My Drive'/data.json ./publaynet_data/
+cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet
+
 ## 文件说明：
 * detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
