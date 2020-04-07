@@ -27,7 +27,6 @@
 !git clone https://github.com/noba1anc3/Publaynet.git
 cd Publaynet
 !git clone https://github.com/facebookresearch/detectron2.git
-  
 ```
 
 2. Install Requirements and Build Detectron2
