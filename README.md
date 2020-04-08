@@ -84,7 +84,7 @@ mkdir output
 
 cp -rf ../drive/'My Drive'/dev.tar.xz/ ./data/
 cp -rf ../drive/'My Drive'/test.tar.xz/ ./data/
-cp -rf ../drive/'My Drive'/model_final.pth ./output
+cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
 tar -xvJf dev.tar.xz
 tar -xvJf test.tar.xz
