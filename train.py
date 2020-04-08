@@ -40,7 +40,7 @@ cfg.SOLVER.MAX_ITER = 190800
 #cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
 cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 512
-cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
+cfg.MODEL.ROI_HEADS.NUM_CLASSES = 5
 
 os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 trainer = DefaultTrainer(cfg)
