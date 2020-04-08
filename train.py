@@ -28,7 +28,7 @@ print('textImg_metadata: ', textImg_metadata)
 
 cfg = get_cfg()
 
-cfg.MODEL.DEVICE = 'cpu'
+#cfg.MODEL.DEVICE = 'cpu'
 
 cfg.OUTPUT_DIR = './output'
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
