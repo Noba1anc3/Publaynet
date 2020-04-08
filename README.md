@@ -22,7 +22,32 @@ All Files:
   * [Txt](https://bhpan.buaa.edu.cn:443/link/0E4FDB66D538F60A891E51CBB94F09A7)
   * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
 
+Dataset:
+|  category  | #Training Set | #Validating Set | #Testing Set |
+|:----------:|:-------------|:----------:|:-------------|
+| num of Images |  | 500 | 499 |
+
+
+Validating Set:
+
+|  category  | #instances   |  category  | #instances   |  category  | #instances   |
+|:----------:|:-------------|:----------:|:-------------|:----------:|:-------------|
+|  chapter   | 151          |  section   | 246          |   clause   | 3096         |
+|            |              |            |              |            |              |
+|   total    | 3493         |            |              |            |              |
+
+Testing Set:
+
+|  category  | #instances   |  category  | #instances   |  category  | #instances   |
+|:----------:|:-------------|:----------:|:-------------|:----------:|:-------------|
+|  chapter   | 151          |  section   | 249          |   clause   | 2947         |
+|            |              |            |              |            |              |
+|   total    | 3347         |            |              |            |              |
+
 Beihang Pan:
+- [Training Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2F16F22C7FB23E4C8F80C5281445AAC8A3)
+- [Validating Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FCED866A3B19F451B85F6700804150471)
+- [Testing Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FF3CAF395CE5946758223D044616A894F)
 
 Google Drive:  
 - [Training Set]()
