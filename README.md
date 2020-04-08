@@ -58,16 +58,14 @@ Google Drive:
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
 
 ## Python Files:
-* detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
-* output_publaynet: 使用backbone的预训练模型在publaynet上训练的结果
-* output: 使用publaynet作为预训练模型在自己的数据集上训练的结果
 * build.py: 构建优化器和学习率策略
-* predict.py: 使用publaynet数据集的预测文件
-* train.py: 使用publaynet数据集的训练文件
-* utils.py: 使用publaynet数据集的工具文件
-* test_per_img.py: 可视化测试集的预测结果
 * visualizeSet.py: 可视化数据集
+* utils.py: 使用publaynet数据集的工具文件
+* train.py: 使用publaynet数据集的训练文件
+* test_per_img.py: 可视化测试集的预测结果
+* predict.py: 使用publaynet数据集的预测文件
+
 
 ## To Run on Google Colab:
 ### Install Requirements and Clone Publaynet
@@ -100,7 +98,7 @@ from google.colab import drive
 drive.mount('/content/drive/')
 ```
 
-### Copy data and model to Publaynet's path
+### Copy Data and Model to Publaynet's Path
 ```
 mkdir data
 mkdir output
@@ -117,4 +115,3 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 ```
 python train.py
 ```
-
