@@ -1,7 +1,7 @@
 # Publaynet
 + [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
-## Requirements:
+## Requirements
 [Detectron2](https://github.com/facebookresearch/detectron2)
 - Linux or macOS with Python ≥ 3.6
 - cython
@@ -9,41 +9,39 @@
 - torchvision　(PyTorch ≥ 1.3)
 - 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
-## DataSet:
-All Files:
-- Images
-  * [001-100](https://bhpan.buaa.edu.cn:443/link/4399929A767FFDB1050AF5B5BA055073)
-  * [101-200](https://bhpan.buaa.edu.cn:443/link/9F28152E98CF60E531195B8E6640EF2C)
-  * [201-300](https://bhpan.buaa.edu.cn:443/link/877D5DAC0B19BFAE6AFFA97D92B14477)
-  * [301-400](https://bhpan.buaa.edu.cn:443/link/E142647428D4D3E18544D865B944A87F)
-  * [401-500](https://bhpan.buaa.edu.cn:443/link/D6D4B32C95E41C2D374981A2C43B7827)
-  
-- Annotation
-  * [Txt](https://bhpan.buaa.edu.cn:443/link/0E4FDB66D538F60A891E51CBB94F09A7)
-  * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
+## DataSet
+### Overview
+|  Category     | Training Set  | Validating Set  | Testing Set  |
+|:-------------:|:-------------:|:---------------:|:------------:|
+| Num of Images | 20365         | 500             | 499          |
+| Percentage    | 95%           | 2.5%            | 2.5%         |
 
-Dataset:
-|  category  | #Training Set | #Validating Set | #Testing Set |
-|:----------:|:-------------|:----------:|:-------------|
-| num of Images |  | 500 | 499 |
-
+Training Set:
 
 Validating Set:
-
-|  category  | #instances   |  category  | #instances   |  category  | #instances   |
-|:----------:|:-------------|:----------:|:-------------|:----------:|:-------------|
-|  chapter   | 151          |  section   | 246          |   clause   | 3096         |
-|            |              |            |              |            |              |
-|   total    | 3493         |            |              |            |              |
+| category | #instances | category | #instances | category | #instances | category | #instances |
+|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
+| chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |  
 
 Testing Set:
+| category | #instances | category | #instances | category | #instances | category | #instances |
+|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
+| chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |  
 
-|  category  | #instances   |  category  | #instances   |  category  | #instances   |
-|:----------:|:-------------|:----------:|:-------------|:----------:|:-------------|
-|  chapter   | 151          |  section   | 249          |   clause   | 2947         |
-|            |              |            |              |            |              |
-|   total    | 3347         |            |              |            |              |
+### Download
+#### All Files:
+Images
+* [001-100](https://bhpan.buaa.edu.cn:443/link/4399929A767FFDB1050AF5B5BA055073)
+* [101-200](https://bhpan.buaa.edu.cn:443/link/9F28152E98CF60E531195B8E6640EF2C)
+* [201-300](https://bhpan.buaa.edu.cn:443/link/877D5DAC0B19BFAE6AFFA97D92B14477)
+* [301-400](https://bhpan.buaa.edu.cn:443/link/E142647428D4D3E18544D865B944A87F)
+* [401-500](https://bhpan.buaa.edu.cn:443/link/D6D4B32C95E41C2D374981A2C43B7827)
 
+Annotation
+* [Txt](https://bhpan.buaa.edu.cn:443/link/0E4FDB66D538F60A891E51CBB94F09A7)
+* [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
+
+#### Dataset:
 Beihang Pan:
 - [Training Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2F16F22C7FB23E4C8F80C5281445AAC8A3)
 - [Validating Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FCED866A3B19F451B85F6700804150471)
