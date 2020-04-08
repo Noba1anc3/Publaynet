@@ -6,9 +6,9 @@ from detectron2.config import get_cfg
 from detectron2.utils.logger import setup_logger
 setup_logger()
 
-trainPath = "./data/dev/image/"
+trainPath = "./data/dev/images/"
 trainjsonPath = "./data/dev/dev.json"
-testPath = "./data/test/image/"
+testPath = "./data/test/images/"
 testjsonPath = "./data/test/test.json"
 
 train_images, test_images, categories = utils.json_resolve(trainjsonPath, testjsonPath)
@@ -47,3 +47,4 @@ trainer.train()
 print('train finished')
 
 # cfg.save_model_steps
+

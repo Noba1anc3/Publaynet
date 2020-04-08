@@ -9,8 +9,6 @@
 - torchvision　(PyTorch ≥ 1.3)
 - 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
-json
-
 ## DataSet:
 All Files:
 - Images
@@ -28,8 +26,8 @@ Beihang Pan:
 
 Google Drive:  
 - [Training Set]()
-- [Validating Set](https://drive.google.com/open?id=1R94vhApbWrF5sZhnAr5GZU62JOaAd8Eg)
-- [Testing Set](https://drive.google.com/open?id=13TBnpVy3jqCG3WKdetNZNF67wGH8kB6B)
+- [Validating Set](https://drive.google.com/open?id=1U5EkjBXjIz9rFL74oNAojb3PsQFk5AGG)
+- [Testing Set](https://drive.google.com/open?id=1or8Mzxp7Q-GOihxkfH7scCJIeNTs86ar)
 
 ## Model:
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
@@ -49,7 +47,6 @@ Google Drive:
 ## To Run on Google Colab:
 ### Install Requirements and Clone Publaynet
 ```
-!pip install json
 !pip install cython
 !pip install torchvision
 !pip install opencv-python
@@ -71,6 +68,7 @@ cd ..
 # CC=clang CXX=clang++ python -m pip install -e .
 ```
 
+## Train
 ### Import Google Drive
 ```
 from google.colab import drive
@@ -82,10 +80,18 @@ drive.mount('/content/drive/')
 mkdir data
 mkdir output
 
-cp -rf ../drive/'My Drive'/dev.tar.xz/ ./data/
-cp -rf ../drive/'My Drive'/test.tar.xz/ ./data/
+cp -rf ../drive/'My Drive'/dev.zip ./data/
+cp -rf ../drive/'My Drive'/test.zip ./data/
 cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
-tar -xvJf dev.tar.xz
-tar -xvJf test.tar.xz
+cd data
+!unzip data/dev.zip
+!unzip data/test.zip
+cd ..
 ```
+
+## Train
+```
+python train.py
+```
+
