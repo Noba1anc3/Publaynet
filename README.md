@@ -59,8 +59,8 @@ Google Drive:
 
 ## Python Files:
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
-* build.py: 构建优化器和学习率策略
 * visualizeSet.py: 可视化数据集
+* build.py: 构建优化器和学习率策略
 * utils.py: 使用publaynet数据集的工具文件
 * train.py: 使用publaynet数据集的训练文件
 * test_per_img.py: 可视化测试集的预测结果
