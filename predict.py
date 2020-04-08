@@ -6,8 +6,8 @@ from detectron2.data import DatasetCatalog, MetadataCatalog
 from detectron2.engine import DefaultPredictor
 from detectron2.config import get_cfg
 
-valPath = "./image/"
-valjsonPath = "./data.json"
+valPath = "./data/test/images/"
+valjsonPath = "./data/test/test.json"
 
 with open(valjsonPath, 'r') as f:
     print('loading json......')
@@ -48,7 +48,6 @@ cfg.MODEL.ROI_HEADS.NUM_CLASSES = 5
 
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
-# cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7
 cfg.DATASETS.TEST = ("valSet", )
 

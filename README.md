@@ -19,14 +19,16 @@
 Training Set:
 
 Validating Set:
+
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
-| chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |  
+| chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |
 
 Testing Set:
+
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
-| chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |  
+| chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |
 
 ### Download
 #### All Files:
@@ -47,7 +49,7 @@ Beihang Pan:
 - [Validating Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FCED866A3B19F451B85F6700804150471)
 - [Testing Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FF3CAF395CE5946758223D044616A894F)
 
-Google Drive:  
+Google Drive:
 - [Training Set]()
 - [Validating Set](https://drive.google.com/open?id=1U5EkjBXjIz9rFL74oNAojb3PsQFk5AGG)
 - [Testing Set](https://drive.google.com/open?id=1or8Mzxp7Q-GOihxkfH7scCJIeNTs86ar)
@@ -92,7 +94,7 @@ cd ..
 ```
 
 ## Train
-### Import Google Drive
+### Mount Google Drive
 ```
 from google.colab import drive
 drive.mount('/content/drive/')
@@ -107,10 +109,8 @@ cp -rf ../drive/'My Drive'/dev.zip ./data/
 cp -rf ../drive/'My Drive'/test.zip ./data/
 cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
-cd data
 !unzip data/dev.zip
 !unzip data/test.zip
-cd ..
 ```
 
 ### Start Training
