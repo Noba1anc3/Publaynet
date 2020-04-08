@@ -3,13 +3,16 @@
 
 ## Requirements:
 [Detectron2](https://github.com/facebookresearch/detectron2)
+- Linux or macOS with Python ≥ 3.6
 - cython
-- torchvision
 - opencv-python
-- 'git+https://github.com/facebookresearch/fvcore'
+- torchvision　(PyTorch ≥ 1.3)
 - 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
+json
+
 ## DataSet:
+All Files:
 - Images
   * [001-100](https://bhpan.buaa.edu.cn:443/link/4399929A767FFDB1050AF5B5BA055073)
   * [101-200](https://bhpan.buaa.edu.cn:443/link/9F28152E98CF60E531195B8E6640EF2C)
@@ -21,38 +24,17 @@
   * [Txt](https://bhpan.buaa.edu.cn:443/link/0E4FDB66D538F60A891E51CBB94F09A7)
   * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
 
-## To Run in Google Colab:
-1. Clone publaynet and detectron2
-```
-!git clone https://github.com/noba1anc3/Publaynet.git
-cd Publaynet
-!git clone https://github.com/facebookresearch/detectron2.git
-```
+Beihang Pan:
 
-2. Install Requirements and Build Detectron2
-```
-pip install -r requirements.txt
-cd detectron2
-!python setup.py build develop
-cd ..
-```
+Google Drive:  
+- [Training Set]()
+- [Validating Set](https://drive.google.com/open?id=1R94vhApbWrF5sZhnAr5GZU62JOaAd8Eg)
+- [Testing Set](https://drive.google.com/open?id=13TBnpVy3jqCG3WKdetNZNF67wGH8kB6B)
 
-3. Import Google Drive
-```
-from google.colab import drive
-drive.mount('/content/drive/')
-```
+## Model:
+ - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
 
-4. Copy data and model to Publaynet's path
-```
-mkdir publaynet_data
-mkdir output_publaynet
-cp -rf ../drive/'My Drive'/image/ ./publaynet_data/
-cp -rf ../drive/'My Drive'/data.json ./publaynet_data/
-cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet
-```
-
-## 文件说明：
+## Python Files:
 * detectron2_repo: 需要下载的Detectron包，见GitHub下载指导
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
 * output_publaynet: 使用backbone的预训练模型在publaynet上训练的结果
@@ -63,3 +45,47 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output_publaynet
 * utils.py: 使用publaynet数据集的工具文件
 * test_per_img.py: 可视化测试集的预测结果
 * visualizeSet.py: 可视化数据集
+
+## To Run on Google Colab:
+### Install Requirements and Clone Publaynet
+```
+!pip install json
+!pip install cython
+!pip install torchvision
+!pip install opencv-python
+!pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+!git clone https://github.com/noba1anc3/Publaynet.git
+cd Publaynet
+```
+
+### Build Detectron2 from Source
+
+After having the above dependencies and gcc & g++ ≥ 5, run:
+```
+!git clone https://github.com/facebookresearch/detectron2.git
+cd detectron2
+!python -m pip install -e .
+cd ..
+
+# Or if you are on macOS
+# CC=clang CXX=clang++ python -m pip install -e .
+```
+
+### Import Google Drive
+```
+from google.colab import drive
+drive.mount('/content/drive/')
+```
+
+### Copy data and model to Publaynet's path
+```
+mkdir data
+mkdir output
+
+cp -rf ../drive/'My Drive'/dev.tar.xz/ ./data/
+cp -rf ../drive/'My Drive'/test.tar.xz/ ./data/
+cp -rf ../drive/'My Drive'/model_final.pth ./output
+
+tar -xvJf dev.tar.xz
+tar -xvJf test.tar.xz
+```

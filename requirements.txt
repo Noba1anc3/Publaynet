@@ -1,5 +1,0 @@
-cython
-torchvision
-opencv-python
-'git+https://github.com/facebookresearch/fvcore'
-'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'

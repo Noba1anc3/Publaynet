@@ -1,5 +1,4 @@
 import utils
-import json
 import os
 from detectron2.data import DatasetCatalog, MetadataCatalog
 from detectron2.engine import DefaultTrainer
@@ -7,43 +6,37 @@ from detectron2.config import get_cfg
 from detectron2.utils.logger import setup_logger
 setup_logger()
 
-trainPath = "./publaynet_data/image/"
-trainjsonPath = "./publaynet_data/data.json"
+trainPath = "./data/dev/image/"
+trainjsonPath = "./data/dev/dev.json"
+testPath = "./data/test/image/"
+testjsonPath = "./data/test/test.json"
 
-with open(trainjsonPath, 'r') as f:
-    imgs_anns = json.load(f)
-    print('json loader finished')
+train_images, test_images, categories = utils.json_resolve(trainjsonPath, testjsonPath)
 
-images = {}
-for image in imgs_anns['images']:
-    images[image['id']] = {'file_name': image['file_name'], 'annotations': []}
-for ann in imgs_anns['annotations']:
-    images[ann['image_id']]['annotations'].append(ann)
-
-categories = []
-for img in imgs_anns['categories']:
-    categories.append(img['name'])
-print('categories: ', categories)
-
-DatasetCatalog.register("trainSet", lambda I = images, P = trainPath: utils.get_textImg_dicts(I, P))
+DatasetCatalog.register("trainSet", lambda I = train_images, P = trainPath: utils.get_textImg_dicts(I, P))
 MetadataCatalog.get("trainSet").set(thing_classes=categories)
 textImg_metadata = MetadataCatalog.get("trainSet")
 print('textImg_metadata: ', textImg_metadata)
 
+DatasetCatalog.register("testSet", lambda I = test_images, P = testPath: utils.get_textImg_dicts(I, P))
+MetadataCatalog.get("testSet").set(thing_classes=categories)
+textImg_metadata = MetadataCatalog.get("testSet")
+print('textImg_metadata: ', textImg_metadata)
+
 cfg = get_cfg()
 
-cfg.MODEL.DEVICE = 'cpu'
-cfg.OUTPUT_DIR = './output_publaynet'
+#cfg.MODEL.DEVICE = 'cpu'
 
+cfg.OUTPUT_DIR = './output'
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.DATASETS.TRAIN = ("trainSet",)
-cfg.DATASETS.TEST = ()
+cfg.DATASETS.TEST = ("testSet",)
 cfg.DATALOADER.NUM_WORKERS = 6
+cfg.SOLVER.IMS_PER_BATCH = 2
+cfg.SOLVER.BASE_LR = 1e-3
+cfg.SOLVER.MAX_ITER = 250000
 # cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
-cfg.SOLVER.IMS_PER_BATCH = 8
-cfg.SOLVER.BASE_LR = 0.001
-cfg.SOLVER.MAX_ITER = 190004
 cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 512
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 5
 

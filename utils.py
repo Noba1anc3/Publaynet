@@ -1,9 +1,36 @@
 import os
+import cv2
+import json
 import random
 from detectron2.structures import BoxMode
-import cv2
 from detectron2.utils.visualizer import Visualizer
-from matplotlib import pyplot as plt
+
+def json_resolve(trainjsonPath, testjsonPath):
+    with open(trainjsonPath, 'r') as f:
+        train_anno = json.load(f)
+        print('Training Set Json File Loaded')
+    with open(testjsonPath, 'r') as f:
+        test_anno = json.load(f)
+        print('Testing Set Json File Loaded')
+
+    train_images = {}
+    for image in train_anno['images']:
+        train_images[image['id']] = {'file_name': image['file_name'], 'annotations': []}
+    for ann in train_anno['annotations']:
+        train_images[ann['image_id']]['annotations'].append(ann)
+
+    test_images = {}
+    for image in test_anno['images']:
+        test_images[image['id']] = {'file_name': image['file_name'], 'annotations': []}
+    for ann in test_anno['annotations']:
+        test_images[ann['image_id']]['annotations'].append(ann)
+
+    categories = []
+    for img in train_anno['categories']:
+        categories.append(img['name'])
+    print('categories: ', categories)
+
+    return train_images, test_images, categories
 
 def get_textImg_dicts(images, img_dir):
 
@@ -25,6 +52,7 @@ def get_textImg_dicts(images, img_dir):
 
         annos = image['annotations']
         objs = []
+
         for anno in annos:
             x = anno["bbox"][0]
             y = anno["bbox"][1]
@@ -37,13 +65,15 @@ def get_textImg_dicts(images, img_dir):
                 "category_id": anno['category_id'] - 1,
                 "iscrowd": 0
             }
+
             objs.append(obj)
+
         record["annotations"] = objs
         dataset_dicts.append(record)
 
-    print('textImg dits lenght :', len(dataset_dicts))
-    print('len of images :', len(images))
-    print('miss imgs :', cnt)
+    print('Folder Image Num :', len(dataset_dicts))
+    print('Json Image Num :', len(images))
+    print('Missed Image Num :', cnt)
 
     return dataset_dicts
 
