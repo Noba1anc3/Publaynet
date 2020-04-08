@@ -19,7 +19,7 @@ MetadataCatalog.get("trainSet").set(thing_classes=categories)
 textImg_metadata = MetadataCatalog.get("trainSet")
 print('textImg_metadata: ', textImg_metadata)
 
-#DatasetCatalog.register("testSet", lambda I = test_images, P = testPath: utils.get_textImg_dicts(I, P))
+DatasetCatalog.register("testSet", lambda I = test_images, P = testPath: utils.get_textImg_dicts(I, P))
 MetadataCatalog.get("testSet").set(thing_classes=categories)
 textImg_metadata = MetadataCatalog.get("testSet")
 print('textImg_metadata: ', textImg_metadata)
