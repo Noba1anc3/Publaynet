@@ -113,7 +113,7 @@ cd data
 cd ..
 ```
 
-## Train
+### Start Training
 ```
 python train.py
 ```
