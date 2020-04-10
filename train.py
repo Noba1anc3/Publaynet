@@ -18,17 +18,19 @@ register_coco_instances("testSet", {}, testjsonPath, testPath)
 
 cfg = get_cfg()
 
-cfg.MODEL.DEVICE = 'cpu'
+#cfg.MODEL.DEVICE = 'cpu'
 
 cfg.OUTPUT_DIR = './output'
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.DATASETS.TRAIN = ("trainSet",)
 cfg.DATASETS.TEST = ("testSet",)
 cfg.DATALOADER.NUM_WORKERS = 6
+
+cfg.SOLVER.CHECKPOINT_PERIOD = 100
+cfg.SOLVER.MAX_ITER = 190500
 cfg.SOLVER.IMS_PER_BATCH = 2
 cfg.SOLVER.BASE_LR = 1e-3
-cfg.SOLVER.CHECKPOINT_PERIOD = 100
-cfg.SOLVER.MAX_ITER = 190000
+
 cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
 #cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
