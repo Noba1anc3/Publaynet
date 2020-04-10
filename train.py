@@ -23,7 +23,7 @@ cfg = get_cfg()
 
 # cfg.MODEL.DEVICE = 'cpu'
 
-cfg.OUTPUT_DIR = './output'
+cfg.OUTPUT_DIR = '../drive/'My Drive'/output'
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.DATASETS.TRAIN = ("trainSet",)
 cfg.DATASETS.TEST = ("testSet",)
