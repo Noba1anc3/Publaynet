@@ -22,13 +22,13 @@ Validating Set:
 
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
-| chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |
+| chapter  | 342        | section  | 561        | clause   | 3624       | total    | 4527       |
 
 Testing Set:
 
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
-| chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |
+| chapter  | 332        | section  | 549        | clause   | 3352       | total    | 4233       |
 
 ### Download
 #### All Files:
@@ -103,15 +103,15 @@ drive.mount('/content/drive/')
 mkdir data
 mkdir output
 
-cp -rf ../drive/'My Drive'/dev.zip ./data/
+cp -rf ../drive/'My Drive'/val.zip ./data/
 cp -rf ../drive/'My Drive'/test.zip ./data/
 cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
-!unzip data/dev.zip
+!unzip data/val.zip
 !unzip data/test.zip
 ```
 
 ### Start Training
 ```
-python train.py
+!python train.py
 ```
