@@ -107,8 +107,10 @@ cp -rf ../drive/'My Drive'/val.zip ./data/
 cp -rf ../drive/'My Drive'/test.zip ./data/
 cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
-!unzip data/val.zip
-!unzip data/test.zip
+cd data
+!unzip val.zip
+!unzip test.zip
+cd ..
 ```
 
 ### Start Training
