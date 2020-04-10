@@ -90,13 +90,14 @@ cd ..
 ```
 
 ## Train
-### Mount Google Drive
+### Data Preparation
+#### Mount Google Drive
 ```
 from google.colab import drive
 drive.mount('/content/drive/')
 ```
 
-### Copy Training and Testing Data to Publaynet's Path
+#### Copy Training and Testing Data to Publaynet's Path
 ```
 mkdir data
 
@@ -109,12 +110,12 @@ cd data
 cd ..
 ```
 
-#### Finetune on Faster_RCNN_X_101_32x8d_FPN_3x
+### Finetune on Faster_RCNN_X_101_32x8d_FPN_3x
 ```
 !python train.py
 ```
 
-#### Finetune on Publaynet's Pretrained Model
+### Finetune on Publaynet's Pretrained Model
 ```
 mkdir output
 cp -rf ../drive/'My Drive'/model_final.pth ./output/
