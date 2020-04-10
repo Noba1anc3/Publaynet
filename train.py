@@ -1,5 +1,6 @@
 
 import os
+import sys, getopt
 
 from detectron2.data.datasets import register_coco_instances
 from detectron2.engine import DefaultTrainer
@@ -9,42 +10,58 @@ from detectron2.utils.logger import setup_logger
 from detectron2.evaluation import COCOEvaluator, inference_on_dataset
 from detectron2.data import build_detection_test_loader
 
-setup_logger()
+def main(argv):
 
-trainPath = "./data/val/images/"
-trainjsonPath = "./data/val/val.json"
-testPath = "./data/test/images/"
-testjsonPath = "./data/test/test.json"
+    setup_logger()
 
-register_coco_instances("trainSet", {}, trainjsonPath, trainPath)
-register_coco_instances("testSet", {}, testjsonPath, testPath)
+    finetune = False
+    trainPath = "./data/train/images/"
+    trainjsonPath = "./data/train/train.json"
+    testPath = "./data/val/images/"
+    testjsonPath = "./data/val/val.json"
 
-cfg = get_cfg()
+    opts, args = getopt.getopt(argv, "hf:", ["finetune="])
 
-# cfg.MODEL.DEVICE = 'cpu'
+    for opt, arg in opts:
+        if opt == '-f':
+            if arg == 'True':
+                finetune = True
 
-cfg.OUTPUT_DIR = './output'
-cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
-cfg.DATASETS.TRAIN = ("trainSet",)
-cfg.DATASETS.TEST = ("testSet",)
-cfg.DATALOADER.NUM_WORKERS = 6
+    register_coco_instances("trainSet", {}, trainjsonPath, trainPath)
+    register_coco_instances("testSet", {}, testjsonPath, testPath)
 
-cfg.SOLVER.CHECKPOINT_PERIOD = 100
-cfg.SOLVER.MAX_ITER = 100
-cfg.SOLVER.IMS_PER_BATCH = 2
-cfg.SOLVER.BASE_LR = 1e-3
+    cfg = get_cfg()
 
-cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
-#cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
-cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
+    # cfg.MODEL.DEVICE = 'cpu'
+    
+    cfg.OUTPUT_DIR = './output'
+    cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
+    cfg.DATASETS.TRAIN = ("trainSet",)
+    cfg.DATASETS.TEST = ("testSet",)
+    cfg.DATALOADER.NUM_WORKERS = 6
 
-os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
+    cfg.SOLVER.CHECKPOINT_PERIOD = 500
+    cfg.SOLVER.MAX_ITER = 500
+    cfg.SOLVER.IMS_PER_BATCH = 2
+    cfg.SOLVER.BASE_LR = 1e-3
+    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
-for i in range(10):
-    trainer = DefaultTrainer(cfg)
-    trainer.resume_or_load(resume=True)
-    trainer.train()
-    evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
-    val_loader = build_detection_test_loader(cfg, "testSet")
-    inference_on_dataset(trainer.model, val_loader, evaluator)
-    cfg.SOLVER.MAX_ITER += 100
+    if finetune:
+        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
+    else:
+        cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
+
+
+    os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
+
+    for i in range(40):
+        trainer = DefaultTrainer(cfg)
+        trainer.resume_or_load(resume=True)
+        trainer.train()
+        evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
+        val_loader = build_detection_test_loader(cfg, "testSet")
+        inference_on_dataset(trainer.model, val_loader, evaluator)
+        cfg.SOLVER.MAX_ITER += 500
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
