@@ -11,8 +11,8 @@ from detectron2.data import build_detection_test_loader
 
 setup_logger()
 
-trainPath = "./data/dev/images/"
-trainjsonPath = "./data/dev/dev.json"
+trainPath = "./data/val/images/"
+trainjsonPath = "./data/val/val.json"
 testPath = "./data/test/images/"
 testjsonPath = "./data/test/test.json"
 
@@ -21,7 +21,7 @@ register_coco_instances("testSet", {}, testjsonPath, testPath)
 
 cfg = get_cfg()
 
-#cfg.MODEL.DEVICE = 'cpu'
+# cfg.MODEL.DEVICE = 'cpu'
 
 cfg.OUTPUT_DIR = './output'
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
