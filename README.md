@@ -70,9 +70,7 @@ Google Drive:
 ## To Run on Google Colab:
 ### Install Requirements and Clone Publaynet
 ```
-!pip install cython
-!pip install torchvision
-!pip install opencv-python
+!pip install pyyaml==5.1
 !pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 !git clone https://github.com/noba1anc3/Publaynet.git
 cd Publaynet
@@ -98,14 +96,12 @@ from google.colab import drive
 drive.mount('/content/drive/')
 ```
 
-### Copy Data and Model to Publaynet's Path
+### Copy Training and Testing Data to Publaynet's Path
 ```
 mkdir data
-mkdir output
 
 cp -rf ../drive/'My Drive'/val.zip ./data/
 cp -rf ../drive/'My Drive'/test.zip ./data/
-cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
 cd data
 !unzip val.zip
@@ -113,7 +109,15 @@ cd data
 cd ..
 ```
 
-### Start Training
+#### Finetune on Faster_RCNN_X_101_32x8d_FPN_3x
 ```
 !python train.py
 ```
+
+#### Finetune on Publaynet's Pretrained Model
+```
+mkdir output
+cp -rf ../drive/'My Drive'/model_final.pth ./output/
+!python train.py
+```
+
