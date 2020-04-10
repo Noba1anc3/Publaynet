@@ -6,6 +6,9 @@ from detectron2.engine import DefaultTrainer
 from detectron2.config import get_cfg
 from detectron2.utils.logger import setup_logger
 
+from detectron2.evaluation import COCOEvaluator, inference_on_dataset
+from detectron2.data import build_detection_test_loader
+
 setup_logger()
 
 trainPath = "./data/dev/images/"
@@ -27,7 +30,7 @@ cfg.DATASETS.TEST = ("testSet",)
 cfg.DATALOADER.NUM_WORKERS = 6
 
 cfg.SOLVER.CHECKPOINT_PERIOD = 100
-cfg.SOLVER.MAX_ITER = 190500
+cfg.SOLVER.MAX_ITER = 190100
 cfg.SOLVER.IMS_PER_BATCH = 2
 cfg.SOLVER.BASE_LR = 1e-3
 
@@ -41,3 +44,7 @@ trainer.resume_or_load(resume=True)
 
 trainer.train()
 
+
+evaluator = COCOEvaluator("testSet", cfg, False, output_dir="./output/")
+val_loader = build_detection_test_loader(cfg, "testSet")
+inference_on_dataset(trainer.model, val_loader, evaluator)
