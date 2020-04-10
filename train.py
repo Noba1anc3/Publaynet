@@ -36,7 +36,7 @@ cfg.SOLVER.BASE_LR = 1e-3
 
 cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
 #cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
-cfg.MODEL.ROI_HEADS.NUM_CLASSES = 5
+cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
 os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 
@@ -44,7 +44,7 @@ for i in range(10):
     trainer = DefaultTrainer(cfg)
     trainer.resume_or_load(resume=True)
     trainer.train()
-    evaluator = COCOEvaluator("testSet", cfg, False, output_dir="./output/")
+    evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
     val_loader = build_detection_test_loader(cfg, "testSet")
     inference_on_dataset(trainer.model, val_loader, evaluator)
     cfg.SOLVER.MAX_ITER += 100
