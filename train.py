@@ -26,7 +26,7 @@ cfg = get_cfg()
 cfg.OUTPUT_DIR = './output'
 cfg.merge_from_file("./detectron2/configs/COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x.yaml")
 cfg.DATASETS.TRAIN = ("trainSet",)
-# cfg.DATASETS.TEST = ("testSet",)
+cfg.DATASETS.TEST = ("testSet",)
 cfg.DATALOADER.NUM_WORKERS = 6
 
 cfg.SOLVER.CHECKPOINT_PERIOD = 100
