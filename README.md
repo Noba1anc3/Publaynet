@@ -22,13 +22,13 @@ Validating Set:
 
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
-| chapter  | 342        | section  | 561        | clause   | 3624       | total    | 4527       |
+| chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |
 
 Testing Set:
 
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
-| chapter  | 332        | section  | 549        | clause   | 3352       | total    | 4233       |
+| chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |
 
 ### Download
 #### All Files:
@@ -51,8 +51,8 @@ Beihang Pan:
 
 Google Drive:
 - [Training Set]()
-- [Validating Set](https://drive.google.com/open?id=1U5EkjBXjIz9rFL74oNAojb3PsQFk5AGG)
-- [Testing Set](https://drive.google.com/open?id=1or8Mzxp7Q-GOihxkfH7scCJIeNTs86ar)
+- [Validating Set](https://drive.google.com/open?id=18ARaJXVFPFRmhfo3zggKeDpms92jr99F)
+- [Testing Set](https://drive.google.com/open?id=1mvKIydzEa34s-vW-BdkmSqaSES4ek5Qq)
 
 ## Model:
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
