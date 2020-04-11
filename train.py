@@ -57,8 +57,7 @@ def main(argv):
     for i in range(40):
         trainer = DefaultTrainer(cfg)
         trainer.resume_or_load(resume=True)
-        if not i == 0:
-            trainer.train()
+        trainer.train()
         evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
         val_loader = build_detection_test_loader(cfg, "testSet")
         inference_on_dataset(trainer.model, val_loader, evaluator)
