@@ -41,13 +41,13 @@ def main(argv):
     cfg.DATALOADER.NUM_WORKERS = 6
 
     cfg.SOLVER.CHECKPOINT_PERIOD = 500
-    cfg.SOLVER.MAX_ITER = 500
+    cfg.SOLVER.MAX_ITER = 3000
     cfg.SOLVER.IMS_PER_BATCH = 2
     cfg.SOLVER.BASE_LR = 1e-3
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
     if finetune:
-        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
+        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_0002499.pth")
     else:
         cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
 
@@ -57,7 +57,8 @@ def main(argv):
     for i in range(40):
         trainer = DefaultTrainer(cfg)
         trainer.resume_or_load(resume=True)
-        trainer.train()
+        if not i == 0:
+            trainer.train()
         evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
         val_loader = build_detection_test_loader(cfg, "testSet")
         inference_on_dataset(trainer.model, val_loader, evaluator)
