@@ -1,6 +1,5 @@
 *.pyc
 .idea
 data
-output
 prediction
 detectron2
