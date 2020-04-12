@@ -129,7 +129,7 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 ## Training Log
 * [Evaluation Norm](https://github.com/Noba1anc3/Publaynet/wiki/COCO%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87)
 
-### Training From Fcratch
+### Training From Scratch
 * [Training Log]()
 
 ### Training on Faster-RCNN Pretrained Model
