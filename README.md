@@ -8,17 +8,19 @@
 | Num of Images | 20365         | 500             | 499          |
 | Percentage    | 95%           | 2.5%            | 2.5%         |
 
-Training Set:  
+Training Set:
+
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
 | chapter  | 11312      | section  | 17471      | clause   | 106931     | total    | 135714     |
 
-Validating Set:  
+Validating Set:
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
 | chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |
 
 Testing Set:
+
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
 | chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |
@@ -127,7 +129,7 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 ## Training Log
 * [Evaluation Norm](https://github.com/Noba1anc3/Publaynet/wiki/COCO%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87)
 
-### Training from scratch
+### Training From Fcratch
 * [Training Log]()
 
 ### Training on Faster-RCNN Pretrained Model
@@ -137,9 +139,11 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 * [Best Model](https://bhpan.buaa.edu.cn:443/link/249C08D8CA1942EBC31493FF551B6124)
 ![Training Logs](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPnxpkKUnmotr5uGbfH1rWlXe0.BSzMhE3HE0xntl3OMaVu6a32DqZi6wOijRIAHwQiw!!/b&bo=iQSOA4kEjgMDCSw!&rf=viewer_4)
 
-### Training on Pretrained Model finetuned on Publaynet Dataset
+### Training on Pretrained Model Finetuned on Publaynet Dataset
 * [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Model-Finetuned-on-Publaynet-Dataset)
 
 ### Comparison
-![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/U9VSE8DftkGCrX.UXUSpmxbXyLNw73lFrZS4yuAw*Cd34esYfV0A0jDYlug8oKPbb19V408LfiTtmsQk2Deb4KfeZrKSkW46v7Z0sAyGu0A!/b&bo=fQLPAX0CzwEDGTw!&rf=viewer_4)
-![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/U9VSE8DftkGCrX.UXUSpm0bnyN28fKfydYpGy7tukyYi4dg3rxeOiqjfJiD4FP74oUGA53b1jgBNu6.BN8k8ntlkFO26Bz8E2kaMbTLAjaQ!/b&bo=dQLNAXUCzQEDGTw!&rf=viewer_4)
+#### Training From Scratch
+
+#### Faster RCNN Pretrained Model & Publaynet Pretrained Model
+![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPn2ST3sA3nqtxZVrF*YzJheuuCzZG6AJoXc.K.l.CL2P7kB7qSo02YIvS56PqOEbcSA!!/b&bo=0gTRAdIE0QEDCSw!&rf=viewer_4)
