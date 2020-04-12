@@ -39,25 +39,21 @@ def main(argv):
     cfg.DATASETS.TRAIN = ("trainSet",)
     cfg.DATASETS.TEST = ("testSet",)
     cfg.DATALOADER.NUM_WORKERS = 6
-
+    cfg.SOLVER.CHECKPOINT_PERIOD = 500
     cfg.SOLVER.IMS_PER_BATCH = 2
-
+    cfg.SOLVER.BASE_LR = 1e-3
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
     if finetune:
-        cfg.SOLVER.CHECKPOINT_PERIOD = 200
-        cfg.SOLVER.MAX_ITER = 190200
-        cfg.SOLVER.BASE_LR = 2e-4
+        cfg.SOLVER.MAX_ITER = 190500
         cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
     else:
-        cfg.SOLVER.CHECKPOINT_PERIOD = 500
         cfg.SOLVER.MAX_ITER = 500
-        cfg.SOLVER.BASE_LR = 1e-3
         cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
     
     os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 
-    for i in range(40):
+    for i in range(16):
         trainer = DefaultTrainer(cfg)
         trainer.resume_or_load(resume=True)
         trainer.train()
