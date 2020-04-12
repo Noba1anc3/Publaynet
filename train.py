@@ -46,7 +46,7 @@ def main(argv):
 
     if finetune:
         cfg.SOLVER.CHECKPOINT_PERIOD = 200
-        cfg.SOLVER.MAX_ITER = 200
+        cfg.SOLVER.MAX_ITER = 190200
         cfg.SOLVER.BASE_LR = 2e-4
         cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
     else:
