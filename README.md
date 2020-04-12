@@ -128,8 +128,7 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
 ## Training Log
 ### Training on Faster-RCNN Pretrained Model
-* [Training Log](http://47.98.230.217:3000/Doc_SemSeg/Publaynet/wiki/Logs+of+Training+on+Faster-RCNN+Pretrained+Model)
-* [Training Log](http://47.98.230.217:3000/Doc_SemSeg/Publaynet/wiki/Logs+of+Training+on+Faster-RCNN+pretrained+model+after+4500+iterations)
+* [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Faster-RCNN-Pretrained-Model)
 * [Loss Json File](https://bhpan.buaa.edu.cn:443/link/E5196C1F60668B347714567AC7372635)
 * [TensorBoard Log File](https://bhpan.buaa.edu.cn:443/link/71201305CAE648180AA30EFE53579C60)
 * [Best Model](https://drive.google.com/open?id=1RMRIkJ5ddRsqPikL9w9fD_3HuT-N5OUi)
