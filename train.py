@@ -61,10 +61,7 @@ def main(argv):
         val_loader = build_detection_test_loader(cfg, "testSet")
         inference_on_dataset(trainer.model, val_loader, evaluator)
         
-        if finetune:
-            cfg.SOLVER.MAX_ITER += 200
-        else:
-            cfg.SOLVER.MAX_ITER += 500
+        cfg.SOLVER.MAX_ITER += 500
         
 
 if __name__ == '__main__':
