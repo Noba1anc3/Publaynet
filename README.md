@@ -1,35 +1,24 @@
 # Publaynet
 + [Publaynet: Largest Dataset Ever for Document Layout Analysis](https://arxiv.org/pdf/1908.07836)
 
-## Requirements
-[Detectron2](https://github.com/facebookresearch/detectron2)
-- Linux or macOS with Python ≥ 3.6
-- cython
-- opencv-python
-- torchvision　(PyTorch ≥ 1.3)
-- 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
-
-## DataSet
+## Company Articles DataSet
 ### Overview
 |  Category     | Training Set  | Validating Set  | Testing Set  |
 |:-------------:|:-------------:|:---------------:|:------------:|
 | Num of Images | 20365         | 500             | 499          |
 | Percentage    | 95%           | 2.5%            | 2.5%         |
 
-Training Set:
-
+Training Set:  
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
 | chapter  | 11312      | section  | 17471      | clause   | 106931     | total    | 135714     |
 
-Validating Set:
-
+Validating Set:  
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
 | chapter  | 151        | section  | 246        | clause   | 3096       | total    | 3493       |
 
 Testing Set:
-
 | category | #instances | category | #instances | category | #instances | category | #instances |
 |:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
 | chapter  | 151        | section  | 249        | clause   | 2947       | total    | 3347       |
@@ -48,18 +37,29 @@ Annotation
 * [Json](https://bhpan.buaa.edu.cn:443/link/B1934FD5815D3F3F89323239CEBC73B3)
 
 #### Dataset:
-Beihang Pan:
-- [Training Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2F16F22C7FB23E4C8F80C5281445AAC8A3)
-- [Validating Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FCED866A3B19F451B85F6700804150471)
-- [Testing Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FF3CAF395CE5946758223D044616A894F)
+- Beihang Pan:
+  - [Training Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2F16F22C7FB23E4C8F80C5281445AAC8A3)
+  - [Validating Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FCED866A3B19F451B85F6700804150471)
+  - [Testing Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FF3CAF395CE5946758223D044616A894F)
 
-Google Drive:
-- [Training Set](https://drive.google.com/open?id=1EiBDzcqTajhyTodHmm_zFeKvUeR4MUYO)
-- [Validating Set](https://drive.google.com/open?id=18ARaJXVFPFRmhfo3zggKeDpms92jr99F)
-- [Testing Set](https://drive.google.com/open?id=1mvKIydzEa34s-vW-BdkmSqaSES4ek5Qq)
+- Google Drive:
+  - [Training Set](https://drive.google.com/open?id=1EiBDzcqTajhyTodHmm_zFeKvUeR4MUYO)
+  - [Validating Set](https://drive.google.com/open?id=18ARaJXVFPFRmhfo3zggKeDpms92jr99F)
+  - [Testing Set](https://drive.google.com/open?id=1mvKIydzEa34s-vW-BdkmSqaSES4ek5Qq)
 
 ## Model:
+### Publaynet Dataset
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
+### Company Articles Dataset
+- [Best Model finetuned with Company Articles Dataseton based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1RMRIkJ5ddRsqPikL9w9fD_3HuT-N5OUi)
+ 
+## Requirements
+[Detectron2](https://github.com/facebookresearch/detectron2)
+- Linux or macOS with Python ≥ 3.6
+- cython
+- opencv-python
+- torchvision　(PyTorch ≥ 1.3)
+- 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
 ## Python Files:
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
@@ -70,8 +70,7 @@ Google Drive:
 * test_per_img.py: 可视化测试集的预测结果
 * predict.py: 使用publaynet数据集的预测文件
 
-
-## To Run on Google Colab:
+## Run on Google Colab:
 ### Install Requirements and Clone Publaynet
 ```
 !pip install pyyaml==5.1
@@ -81,7 +80,6 @@ cd Publaynet
 ```
 
 ### Build Detectron2 from Source
-
 After having the above dependencies and gcc & g++ ≥ 5, run:
 ```
 !git clone https://github.com/facebookresearch/detectron2.git
@@ -132,6 +130,6 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 * [Loss Json File](https://bhpan.buaa.edu.cn:443/link/E5196C1F60668B347714567AC7372635)
 * [TensorBoard Log File](https://bhpan.buaa.edu.cn:443/link/71201305CAE648180AA30EFE53579C60)
 * [Best Model](https://drive.google.com/open?id=1RMRIkJ5ddRsqPikL9w9fD_3HuT-N5OUi)
-
+![Training Logs](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPnxpkKUnmotr5uGbfH1rWlXe0.BSzMhE3HE0xntl3OMaVu6a32DqZi6wOijRIAHwQiw!!/b&bo=iQSOA4kEjgMDCSw!&rf=viewer_4)
 
 ### Training on Pretrained Model finetuned on Publaynet Dataset
