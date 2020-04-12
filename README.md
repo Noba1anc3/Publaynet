@@ -51,7 +51,7 @@ Annotation
 ### Publaynet Dataset
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
 ### Company Articles Dataset
-- [Best Model finetuned with Company Articles Dataseton based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1RMRIkJ5ddRsqPikL9w9fD_3HuT-N5OUi)
+- [Best Model finetuned with Company Articles Dataseton based on pretrained model of Faster-RCNN-ResNet](https://bhpan.buaa.edu.cn:443/link/249C08D8CA1942EBC31493FF551B6124)
  
 ## Requirements
 [Detectron2](https://github.com/facebookresearch/detectron2)
@@ -126,12 +126,20 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
 ## Training Log
 * [Evaluation Norm](https://github.com/Noba1anc3/Publaynet/wiki/COCO%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87)
+
+### Training from scratch
+* [Training Log]()
+
 ### Training on Faster-RCNN Pretrained Model
 * [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Faster-RCNN-Pretrained-Model)
 * [Loss Json File](https://bhpan.buaa.edu.cn:443/link/E5196C1F60668B347714567AC7372635)
 * [TensorBoard Log File](https://bhpan.buaa.edu.cn:443/link/71201305CAE648180AA30EFE53579C60)
-* [Best Model](https://drive.google.com/open?id=1RMRIkJ5ddRsqPikL9w9fD_3HuT-N5OUi)
+* [Best Model](https://bhpan.buaa.edu.cn:443/link/249C08D8CA1942EBC31493FF551B6124)
 ![Training Logs](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPnxpkKUnmotr5uGbfH1rWlXe0.BSzMhE3HE0xntl3OMaVu6a32DqZi6wOijRIAHwQiw!!/b&bo=iQSOA4kEjgMDCSw!&rf=viewer_4)
 
 ### Training on Pretrained Model finetuned on Publaynet Dataset
 * [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Model-Fine-tuned-on-Publaynet-Dataset)
+
+### Comparison
+![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/U9VSE8DftkGCrX.UXUSpmxbXyLNw73lFrZS4yuAw*Cd34esYfV0A0jDYlug8oKPbb19V408LfiTtmsQk2Deb4KfeZrKSkW46v7Z0sAyGu0A!/b&bo=fQLPAX0CzwEDGTw!&rf=viewer_4)
+![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/U9VSE8DftkGCrX.UXUSpm0bnyN28fKfydYpGy7tukyYi4dg3rxeOiqjfJiD4FP74oUGA53b1jgBNu6.BN8k8ntlkFO26Bz8E2kaMbTLAjaQ!/b&bo=dQLNAXUCzQEDGTw!&rf=viewer_4)
