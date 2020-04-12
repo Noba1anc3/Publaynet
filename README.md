@@ -138,7 +138,7 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 ![Training Logs](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPnxpkKUnmotr5uGbfH1rWlXe0.BSzMhE3HE0xntl3OMaVu6a32DqZi6wOijRIAHwQiw!!/b&bo=iQSOA4kEjgMDCSw!&rf=viewer_4)
 
 ### Training on Pretrained Model finetuned on Publaynet Dataset
-* [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Model-Fine-tuned-on-Publaynet-Dataset)
+* [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Model-Finetuned-on-Publaynet-Dataset)
 
 ### Comparison
 ![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/U9VSE8DftkGCrX.UXUSpmxbXyLNw73lFrZS4yuAw*Cd34esYfV0A0jDYlug8oKPbb19V408LfiTtmsQk2Deb4KfeZrKSkW46v7Z0sAyGu0A!/b&bo=fQLPAX0CzwEDGTw!&rf=viewer_4)
