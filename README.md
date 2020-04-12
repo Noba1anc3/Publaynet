@@ -18,6 +18,10 @@
 
 Training Set:
 
+| category | #instances | category | #instances | category | #instances | category | #instances |
+|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|:--------:|:----------:|
+| chapter  | 11312      | section  | 17471      | clause   | 106931     | total    | 135714     |
+
 Validating Set:
 
 | category | #instances | category | #instances | category | #instances | category | #instances |
@@ -50,7 +54,7 @@ Beihang Pan:
 - [Testing Set](https://bhpan.buaa.edu.cn/#/link/8652A7C4D9564589A017F078DF72D532?gns=6DB717ABC02F4A6794D661D007D50419%2FD3BB1FB487824A5BB26CE7A3F259D7B1%2FF3CAF395CE5946758223D044616A894F)
 
 Google Drive:
-- [Training Set]()
+- [Training Set](https://drive.google.com/open?id=1EiBDzcqTajhyTodHmm_zFeKvUeR4MUYO)
 - [Validating Set](https://drive.google.com/open?id=18ARaJXVFPFRmhfo3zggKeDpms92jr99F)
 - [Testing Set](https://drive.google.com/open?id=1mvKIydzEa34s-vW-BdkmSqaSES4ek5Qq)
 
@@ -101,24 +105,34 @@ drive.mount('/content/drive/')
 ```
 mkdir data
 
+cp -rf ../drive/'My Drive'/train.zip ./data/
 cp -rf ../drive/'My Drive'/val.zip ./data/
-cp -rf ../drive/'My Drive'/test.zip ./data/
 
 cd data
+!unzip train.zip
 !unzip val.zip
-!unzip test.zip
 cd ..
 ```
 
 ### Finetune on Faster_RCNN_X_101_32x8d_FPN_3x
 ```
-!python train.py
+!python train.py -f False
 ```
 
 ### Finetune on Publaynet's Pretrained Model
 ```
 mkdir output
 cp -rf ../drive/'My Drive'/model_final.pth ./output/
-!python train.py
+!python train.py -f True
 ```
 
+## Training Log
+### Training on Faster-RCNN Pretrained Model
+* [Training Log](http://47.98.230.217:3000/Doc_SemSeg/Publaynet/wiki/Logs+of+Training+on+Faster-RCNN+Pretrained+Model)
+* [Training Log](http://47.98.230.217:3000/Doc_SemSeg/Publaynet/wiki/Logs+of+Training+on+Faster-RCNN+pretrained+model+after+4500+iterations)
+* [Loss Json File](https://bhpan.buaa.edu.cn:443/link/E5196C1F60668B347714567AC7372635)
+* [TensorBoard Log File](https://bhpan.buaa.edu.cn:443/link/71201305CAE648180AA30EFE53579C60)
+* [Best Model](https://drive.google.com/open?id=1RMRIkJ5ddRsqPikL9w9fD_3HuT-N5OUi)
+
+
+### Training on Pretrained Model finetuned on Publaynet Dataset
