@@ -40,18 +40,21 @@ def main(argv):
     cfg.DATASETS.TEST = ("testSet",)
     cfg.DATALOADER.NUM_WORKERS = 6
 
-    cfg.SOLVER.CHECKPOINT_PERIOD = 500
-    cfg.SOLVER.MAX_ITER = 3000
     cfg.SOLVER.IMS_PER_BATCH = 2
-    cfg.SOLVER.BASE_LR = 1e-3
+
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
     if finetune:
-        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_0002499.pth")
+        cfg.SOLVER.CHECKPOINT_PERIOD = 200
+        cfg.SOLVER.MAX_ITER = 200
+        cfg.SOLVER.BASE_LR = 2e-4
+        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
     else:
+        cfg.SOLVER.CHECKPOINT_PERIOD = 500
+        cfg.SOLVER.MAX_ITER = 500
+        cfg.SOLVER.BASE_LR = 1e-3
         cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
-
-
+    
     os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
 
     for i in range(40):
@@ -61,7 +64,12 @@ def main(argv):
         evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
         val_loader = build_detection_test_loader(cfg, "testSet")
         inference_on_dataset(trainer.model, val_loader, evaluator)
-        cfg.SOLVER.MAX_ITER += 500
+        
+        if finetune:
+            cfg.SOLVER.MAX_ITER += 200
+        else:
+            cfg.SOLVER.MAX_ITER += 500
+        
 
 if __name__ == '__main__':
     main(sys.argv[1:])
