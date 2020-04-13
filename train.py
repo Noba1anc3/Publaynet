@@ -17,8 +17,8 @@ def main(argv):
     finetune = False
     trainPath = "./data/train/images/"
     trainjsonPath = "./data/train/train.json"
-    testPath = "./data/val/images/"
-    testjsonPath = "./data/val/val.json"
+    testPath = "./data/test/images/"
+    testjsonPath = "./data/test/test.json"
 
     opts, args = getopt.getopt(argv, "hf:", ["finetune="])
 
@@ -56,7 +56,7 @@ def main(argv):
     for i in range(16):
         trainer = DefaultTrainer(cfg)
         trainer.resume_or_load(resume=True)
-        trainer.train()
+        #trainer.train()
         evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
         val_loader = build_detection_test_loader(cfg, "testSet")
         inference_on_dataset(trainer.model, val_loader, evaluator)
