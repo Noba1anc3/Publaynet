@@ -45,8 +45,8 @@ def main(argv):
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
     if finetune:
-        cfg.SOLVER.MAX_ITER = 190500
-        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
+        cfg.SOLVER.MAX_ITER = 1905100
+        cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_0005499.pth")
     else:
         cfg.SOLVER.MAX_ITER = 500
         cfg.MODEL.WEIGHTS = "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
