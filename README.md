@@ -50,9 +50,9 @@ Annotation
   - [Testing Set](https://drive.google.com/open?id=1mvKIydzEa34s-vW-BdkmSqaSES4ek5Qq)
 
 ## Model:
-### Publaynet Dataset
+### Pretrained on Publaynet Dataset
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
-### Company Articles Dataset
+### Trained on Company Articles Dataset
 - [Best Model finetuned with Company Articles Dataseton based on pretrained model of Faster-RCNN-ResNet](https://bhpan.buaa.edu.cn:443/link/249C08D8CA1942EBC31493FF551B6124)
 
 ## Python Files:
