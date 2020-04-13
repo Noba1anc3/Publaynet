@@ -150,3 +150,20 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
 #### Faster RCNN Pretrained Model & Publaynet Pretrained Model
 ![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPn2ST3sA3nqtxZVrF*YzJheuuCzZG6AJoXc.K.l.CL2P7kB7qSo02YIvS56PqOEbcSA!!/b&bo=0gTRAdIE0QEDCSw!&rf=viewer_4)
+
+### Evaluation Result on Testing Set
+#### Per-class AP
+| chapter AP | section AP | clause AP |  mAP   |
+|:----------:|:----------:|:---------:|:------:|
+| 85.180     | 86.641     | 93.367    | 88.396 | 
+
+#### Average Precision
+|   AP   |  AP50  |  AP75  |  APs  |  APm   |  APl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 88.396 | 99.037 | 98.956 |  NaN  | 80.382 | 88.964 |
+
+#### Average Recall
+|  AR1   |  AR10  | AR100  |  ARs  |  ARm   |  ARl   |
+|:------:|:------:|:------:|:-----:|:------:|:------:|
+| 57.0   | 91.4   | 92.0   |  NaN  | 84.8   | 92.1   |
+
