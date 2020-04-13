@@ -54,14 +54,6 @@ Annotation
  - [Model finetuned with Publaynet Dataset based on pretrained model of Faster-RCNN-ResNet](https://drive.google.com/open?id=1DPfPmN7Z-aefzSCw_KcCPxi4ArTeG5cl)
 ### Company Articles Dataset
 - [Best Model finetuned with Company Articles Dataseton based on pretrained model of Faster-RCNN-ResNet](https://bhpan.buaa.edu.cn:443/link/249C08D8CA1942EBC31493FF551B6124)
- 
-## Requirements
-[Detectron2](https://github.com/facebookresearch/detectron2)
-- Linux or macOS with Python ≥ 3.6
-- cython
-- opencv-python
-- torchvision　(PyTorch ≥ 1.3)
-- 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
 ## Python Files:
 * faster_rcnn_resnet101_coco_2018_01_28: backbone的预训练模型，用于publaynet数据集训练
@@ -71,6 +63,14 @@ Annotation
 * train.py: 使用publaynet数据集的训练文件
 * test_per_img.py: 可视化测试集的预测结果
 * predict.py: 使用publaynet数据集的预测文件
+ 
+## Requirements
+[Detectron2](https://github.com/facebookresearch/detectron2)
+- Linux or macOS with Python ≥ 3.6
+- cython
+- opencv-python
+- torchvision　(PyTorch ≥ 1.3)
+- 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
 ## Run on Google Colab:
 ### Install Requirements and Clone Publaynet
@@ -130,7 +130,8 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 * [Evaluation Norm](https://github.com/Noba1anc3/Publaynet/wiki/COCO%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87)
 
 ### Training From Scratch
-* [Training Log]()
+* [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-from-Scratch)
+![Training Logs](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPn.qlCbn3vGjn*K2eFh4HgrgEg91Oq9CJZTH*3IpEvyR7YgsNtEWLOpUJR4bf5XaNgg!!/b&bo=cAQ0A3AENAMDCSw!&rf=viewer_4)
 
 ### Training on Faster-RCNN Pretrained Model
 * [Training Log](https://github.com/Noba1anc3/Publaynet/wiki/Logs-of-Training-on-Faster-RCNN-Pretrained-Model)
@@ -145,6 +146,7 @@ cp -rf ../drive/'My Drive'/model_final.pth ./output/
 
 ### Comparison
 #### Training From Scratch & Training on Faster RCNN Pretrained Model
+![scratch & faster rcnn](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/U9VSE8DftkGCrX.UXUSpm1qz6Yj2ishw3TR4Hw8CcyzYD6eXc08*ktbczbCqt1fH1vVQUgXludHtBwqpsoHvJphQseZQRofPz7bY7uCjPUs!/b&bo=dQSnAXUEpwEDGTw!&rf=viewer_4)
 
 #### Faster RCNN Pretrained Model & Publaynet Pretrained Model
 ![faster rcnn & publaynet](http://m.qpic.cn/psc?/fef49446-40e0-48c4-adcc-654c5015022c/90yfO.8bOadXEE4MiHsPn2ST3sA3nqtxZVrF*YzJheuuCzZG6AJoXc.K.l.CL2P7kB7qSo02YIvS56PqOEbcSA!!/b&bo=0gTRAdIE0QEDCSw!&rf=viewer_4)
