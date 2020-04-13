@@ -15,8 +15,8 @@ def main(argv):
     setup_logger()
 
     finetune = False
-    trainPath = "./data/train/images/"
-    trainjsonPath = "./data/train/train.json"
+    trainPath = "./data/val/images/"
+    trainjsonPath = "./data/val/val.json"
     testPath = "./data/test/images/"
     testjsonPath = "./data/test/test.json"
 
