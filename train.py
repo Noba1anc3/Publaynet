@@ -15,10 +15,10 @@ def main(argv):
     setup_logger()
 
     finetune = False
-    trainPath = "./data/val/images/"
-    trainjsonPath = "./data/val/val.json"
-    testPath = "./data/test/images/"
-    testjsonPath = "./data/test/test.json"
+    trainPath = "./data/train/images/"
+    trainjsonPath = "./data/train/train.json"
+    testPath = "./data/val/images/"
+    testjsonPath = "./data/val/val.json"
 
     opts, args = getopt.getopt(argv, "hf:", ["finetune="])
 
@@ -45,7 +45,7 @@ def main(argv):
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
     if finetune:
-        cfg.SOLVER.MAX_ITER = 1905100
+        cfg.SOLVER.MAX_ITER = 190500
         cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_0005499.pth")
     else:
         cfg.SOLVER.MAX_ITER = 500
@@ -56,7 +56,7 @@ def main(argv):
     for i in range(16):
         trainer = DefaultTrainer(cfg)
         trainer.resume_or_load(resume=True)
-        #trainer.train()
+        trainer.train()
         evaluator = COCOEvaluator("testSet", cfg, False, output_dir = cfg.OUTPUT_DIR)
         val_loader = build_detection_test_loader(cfg, "testSet")
         inference_on_dataset(trainer.model, val_loader, evaluator)
