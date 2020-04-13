@@ -27,7 +27,7 @@ def main(argv):
             if arg == 'True':
                 finetune = True
 
-    register_coco_instances("trainSet", {}, trainjsonPath, trainPath)
+    #register_coco_instances("trainSet", {}, trainjsonPath, trainPath)
     register_coco_instances("testSet", {}, testjsonPath, testPath)
 
     cfg = get_cfg()
